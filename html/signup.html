@@ -24,15 +24,16 @@
               <!--
               login
               -->
-                <div class="wrapper" >
+
+                <div class="wrapper">
               	<div class="container">
                   <h1>Welcome</h1>
               		<form class="form" action="javascript:redirect()">
                       <div class ="inputForm" action="home.html">
-                        <input type="text" placeholder="Username">
-                        <input type="text" placeholder="email">
-                        <input type="password" placeholder="Password">
-                        <input type="password" placeholder="Re-type password">
+                        <input type="text" id="username" placeholder="Username">
+                        <input type="text" id="email"  placeholder="email">
+                        <input type="password" id="password1"  placeholder="Password">
+                        <input type="password" id="password2"  placeholder="Re-type password">
                       </div>
                       <div class = "personType">
                         <label><input id="student" type="checkbox" /> I'm student</label>
@@ -65,18 +66,18 @@
               <div class="wrapperS">
               	<div class="containerS">
                   <h1>Welcome, student.</h1>
-              		<form class="form">
+              		<form class="form" action="javascript:submitStudent()">
                       <div class ="inputForm">
-                        <input type="text" placeholder="Faculty">
-                        <select name="Year" >
+                        <input id="faculty" type="text" placeholder="Faculty">
+                        <select id="year" name="Year" >
                             <option value="0">Year</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-                        <input type="text" placeholder="PhoneNumber">
-                        <select name="Gender">
+                        <input type="text" id="phone" placeholder="PhoneNumber">
+                        <select name="Gender" id="gender">
                             <option value="0">Gender</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
@@ -108,11 +109,11 @@
               <div class="wrapperC">
                             	<div class="containerC">
                                 <h1>>Welcome, talent seeker.</h1>
-                            		<form class="form">
+                                <form class="form" action="javascript:submitCorporation()">
                                     <div class ="inputForm">
-                                      <input type="text" placeholder="Corporation name">
-                                      <input type="text" placeholder="PhoneNumber">
-                                      <input type="text" placeholder="Adress">
+                                      <input id="corpname" type="text" placeholder="Corporation name">
+                                      <input id="phone" type="text" placeholder="PhoneNumber">
+                                      <input id="adress" type="text" placeholder="Adress">
                                     </div>
                                     <button type="submit" id="login-button"><b>Register</b></button>
                                 </form>
@@ -139,7 +140,7 @@
               <div class="wrapperP">
               <div class="containerP">
                 <h1>Welcome, teacher.</h1>
-                <form class="form">
+                <form class="form" action="javascript:submitProfessor()">
                     <button type="submit" id="login-button"><b>Register</b></button>
                 </form>
               </div>
