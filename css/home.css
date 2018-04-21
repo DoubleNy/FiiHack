@@ -5,13 +5,11 @@
   --color4: #75FF63;
   --color5: #D1D1D1;
 }*/
-
-body{
-  margin: 0px;
-  padding: 0px;
-  background-color:white;
-  max-width: 100%;
-  overflow-x: hidden;
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-weight: 300;
+    margin: 0px;
 }
 
 .header{
@@ -82,9 +80,10 @@ body{
 }
 .A_content h1{
     font-size: 60px;
-    font: Poppins, sans-serif;
-    font-weight: 200;
-    color:black;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    color:white;
+
 }
 
 #navbar .hexagon{
