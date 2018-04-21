@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/professor.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../javascript/professor.js"></script>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer;color:black;position:fixed;top:30px;left:30px;" onclick="openNav()">&#9776;</span>
+
+<div class="container" style="margin: 50px auto 0px;">
+
+    <div class="containerLeft">
+        <img src="../images/eagle.jpg" alt="Avatar" style="width:200px">
+    </div>
+
+    <div class="containerRight">
+        <h1 id="name">Marcu David</h1>
+        <h2>University: </h2>
+        <h3 id = "university"> Alexandru Ioan Cuza, Computer Science, Iasi</h3>
+        <h2>Phone No :</h2>
+        <h3 id="phoneNo">+40770345876</h3>
+        <h2>Email :</h2>
+        <h3 id="email">marcu.david.boss@yahoo.com</h3>
+    </div>
+
+</div>
+
+<div class="container2">
+
+    <h1 id="sectionName">Teaches</h1>
+    <h1 id="addObject" onclick="showTeachesForm()">+</h1>
+
+    <div id="formObject">
+        <form action="">
+            <input type="text" name="skillName" required>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div class="object">
+        <h1 id="object1">Databases</h1>
+        <h1 id="object2">Web Technologies</h1>
+    </div>
+
+</div>
+
+<div class="container2">
+
+    <h1 id="sectionName">Experience</h1>
+    <h1 id="addExperience" onclick="showExperienceForm()">+</h1>
+
+    <div id="formExperience">
+        <form action="">
+            <textarea rows="4" cols="50" name="comment" ></textarea>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div class="experience">
+        <h1 id="exp1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+        <h1 id="exp2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+    </div>
+
+</div>
+
+<div class="container2">
+
+    <h1 id="sectionName">Studies</h1>
+    <h1 id="addStudy" onclick="showStudiesForm()">+</h1>
+
+    <div id="formStudy">
+        <form action="">
+            <textarea rows="4" cols="50" name="comment" ></textarea>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div class="studies">
+        <h1 id="study1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+        <h1 id="study2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+    </div>
+
+</div>
+
+<div class="container2" style="margin: 2px auto 50px;">
+
+    <h1 id="sectionName">Reviews</h1>
+    <h1 id="addReview" onclick="showReviewsForm()">+</h1>
+
+    <div id="formReview">
+        <form action="">
+            <textarea rows="4" cols="50" name="comment" ></textarea>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div class="review">
+        <h1 id="project1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+        <h1 id="project2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+    </div>
+
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    color:black;
+}
+
+html {
+    background: url(../images/wallpaper.jpg) no-repeat center center fixed;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.container{
+    background-color: rgba(0,0,0,0.2);
+    width: 80%;
+    height: 400px;
+    margin: 2px auto 0px;
+}
+
+.containerLeft{
+    width: 40%;
+    height: inherit;
+    display: inline-block;
+    float: left;
+}
+
+.containerLeft img{
+    border-radius: 50%;
+    display:block;
+    margin:0 auto;
+    margin-top: 50px;
+    border: 2px solid white;
+}
+
+.containerRight{
+    width: 60%;
+    height: inherit;
+    display: inline-block;
+    float: right;
+}
+
+.containerRight h1{
+    text-align: center;
+    font-size: 40px;
+    margin: 20px auto;
+}
+
+.containerRight h2{
+    font-size: 20px;
+    color:white;
+    background-color: #ff4800;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 10%;
+}
+
+.containerRight h3{
+    font-size: 20px;
+    margin: 10px auto;
+    padding-left: 20px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.container2{
+    background-color: rgba(0,0,0,0.2);
+    width: 80%;
+    margin: 2px auto 0px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container2 #sectionName {
+    font-size: 40px;
+    color: #ff4800;
+    display: inline-block;
+}
+
+.container2 #addObject,
+.container2 #addExperience,
+.container2 #addStudy,
+.container2 #addReview{
+    font-size: 40px;
+    display: inline-block;
+
+    margin: 10px;
+    color: #ff4800;
+}
+
+.container2 #addObject:hover,
+.container2 #addExperience:hover,
+.container2 #addStudy:hover,
+.container2 #addReview:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.container2 .object h1{
+    font-size: 20px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 20%;
+    background-color: #ff4800;
+    color: white;
+}
+
+.container2 .experience h1,
+.container2 .studies h1,
+.container2 .review h1{
+    font-size: 20px;
+    display: block;
+    padding: 15px 10px;
+    color: black;
+    border-bottom: 1px solid white;
+}
+
+.container2 .experience h1:last-child,
+.container2 .studies h1:last-child,
+.container2 .review h1:last-child{
+    border: none;
+}
+
+textarea{
+    width:100%;
+    resize:none;
+}
+
+#formExperience input[type=submit],
+#formStudy input[type=submit],
+#formReview input[type=submit]{
+    border: none;
+    display: block;
+    color: white;
+    background-color: #ff4800;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+#formObject input[type=submit] {
+    border: none;
+    color: white;
+    background-color: #ff4800;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+#formObject input[type=text] {
+    border: none;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+#formObject {
+    margin: 10px 0px;
+    display: none;
+}
+#formStudy,
+#formExperience,
+#formReview{
+    display: none;
+}
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
