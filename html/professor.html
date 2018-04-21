@@ -3,6 +3,8 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="../css/professor.css">
     <link rel="stylesheet" href="../css/searchBar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,8 +59,8 @@
     <h1 id="addObject" onclick="showTeachesForm()">+</h1>
 
     <div id="formObject">
-        <form action="">
-            <input type="text" name="skillName" required>
+        <form action="javascript:adaugaSkill()">
+            <input type="text" name="skillName" id="skillName" required>
             <input type="submit">
         </form>
     </div>
@@ -76,8 +78,8 @@
     <h1 id="addExperience" onclick="showExperienceForm()">+</h1>
 
     <div id="formExperience">
-        <form action="">
-            <textarea rows="4" cols="50" name="comment" ></textarea>
+        <form action="javascript:adaugaExperienta()">
+            <textarea rows="4" cols="50" name="comment" id="experienta"></textarea>
             <input type="submit">
         </form>
     </div>
@@ -95,8 +97,8 @@
     <h1 id="addStudy" onclick="showStudiesForm()">+</h1>
 
     <div id="formStudy">
-        <form action="">
-            <textarea rows="4" cols="50" name="comment" ></textarea>
+        <form action="javascript:adaugaStudii()">
+            <textarea rows="4" cols="50" name="comment" id="studiu"></textarea>
             <input type="submit">
         </form>
     </div>
@@ -114,8 +116,8 @@
     <h1 id="addReview" onclick="showReviewsForm()">+</h1>
 
     <div id="formReview">
-        <form action="">
-            <textarea rows="4" cols="50" name="comment" ></textarea>
+        <form action="javascript:adaugaReview()">
+            <textarea rows="4" cols="50" name="comment" id="review"></textarea>
             <input type="submit">
         </form>
     </div>
