@@ -21,7 +21,7 @@ html {
     padding-top: 60px;
 }
 
-.sidenav a {
+.sidenav .principale {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -30,7 +30,21 @@ html {
     transition: 0.3s;
 }
 
-.sidenav a:hover {
+.sidenav .principale:last-of-type {
+  color: #f1f1f1;
+}
+
+.sidenav ul {
+  padding: 8px 8px 8px 32px;
+  list-style: none;
+}
+
+.sidenav li {
+    color: white;
+    margin: 5px 0px;
+}
+
+.sidenav .principale:hover {
     color: #f1f1f1;
 }
 
