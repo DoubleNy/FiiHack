@@ -1,76 +1,63 @@
+var nume, email1, password1, password2, faculty1, year1, phone1, gender1, corpname1, adress1;
+
 function redirect(){
+    nume = document.getElementById("username").value;
+    email1 = document.getElementById("email").value;
+    password1 = document.getElementById("password1").value;
+    password2 = document.getElementById("password2").value;
 
     if(document.getElementById("student").checked == true) {
-          $(".wrapper").hide();
-          $(".wrapperS").css("display", "block");
+          $(".wrapper").css("display", "none");
+          $(".wrapperS").css("visibility", "visible");
     }
     if(document.getElementById("profesor").checked == true) {
-          $(".wrapper").hide();
-          $(".wrapperP").css("display", "block");
+          $(".wrapper").css("display", "none");
+          $(".wrapperP").css("visibility", "visible");
     }
     if(document.getElementById("corporation").checked == true){
-          $(".wrapper").hide();
-          $(".wrapperC").css("display", "block");
+          $(".wrapper").css("display", "none");
+          $(".wrapperC").css("visibility", "visible");
     }
 }
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
-
-function myFunction(x) {
-    x.classList.toggle("change");
-    var menu=document.getElementById('navbar');
-    if(menu.classList.contains("slide-right")){
-      menu.classList.toggle("slide-left");
-    }
-    else {
-      menu.classList.toggle("slide-right");
-    }
-}
-  function addPop() {
-      var logare = document.getElementById('pop');
-      //var singIsOnDisplay = document.getElementById('signUP').classList.contains('sign-up-forward');
-      var hasClass = logare.classList.contains('pop-up-forward');
-      //console.log(singIsOnDisplay);
-      //if(singIsOnDisplay){
-    //      addSign();
-    //  }
-      if(hasClass){
-          logare.classList.add("pop-up-backward");
-          logare.classList.remove("pop-up-forward");
-          //logare.classList.toggle("pop-up-backward");
-        } else {
-          logare.style.visibility='visible';
-          logare.classList.remove("pop-up-backward");
-          logare.classList.add("pop-up-forward");
-          logare.style.display = "block";
-          //logare.classList.toggle("pop-up-forward");
+function submitStudent(){
+  faculty1 = document.getElementById("faculty").value;
+  year1 = document.getElementById("year").value;
+  phone1 = document.getElementById("phone").value;
+  gender1 = document.getElementById("gender").value;
+  $.ajax({
+        type: "POST",
+        url: "../connect.php",
+        data: ({name: nume, email: email1, password: password1, repassword : password2, faculty : faculty1, year : year1, phone : phone1, gender : gender1}),
+        success: function(rs){
+          alert(rs);
         }
+    });
 }
 
-  function addSign() {
-      var logare = document.getElementById('signUP');
-      var popIsOnDisplay = document.getElementById('pop').classList.contains('pop-up-forward');
-      var hasClass = logare.classList.contains('sign-up-forward');
-      if(popIsOnDisplay){
-          addPop();
-      }
-      //console.log(popIsOnDisplay);
-      if(hasClass){
-          logare.classList.add("sign-up-backward");
-          logare.classList.remove("sign-up-forward");
-          //logare.classList.toggle("sign-up-backward");
-      } else {
-          logare.classList.remove("sign-up-backward");
-          logare.classList.add("sign-up-forward");
-          logare.style.display = "block";
-          //logare.style.display = "block";
-          //logare.classList.toggle("sign-up-forward");
-      }
+
+
+function submitProfessor(){
+  $.ajax({
+        type: "POST",
+        url: "../connectProf.php",
+        data: ({name: nume, email: email1, password: password1, repassword : password2}),
+        success: function(rs){
+          alert("Raspuns : " + rs);
+        }
+    });
+}
+
+
+function submitCorporation(){
+  corpname1 = document.getElementById("corpname").value;
+  adress1 = document.getElementById("adress").value;
+  $.ajax({
+        type: "POST",
+        url: "../connectCorp.php",
+        data: ({name: nume, email: email1, password: password1, repassword : password2, corpname : corpname1, adress : adress1}),
+        success: function(rs){
+          alert(rs);
+        }
+    });
 }
