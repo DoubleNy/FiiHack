@@ -10,22 +10,27 @@ function redirect(){
           url: "../signupBD.php",
           data: ({username: username, email: email1}),
           success: function(rs){
-            if(rs == "0")
-              alert(rs);
+            if(rs == "0"){
+              alert("Username already used !");
+            }else if(rs == "1"){
+              alert("Email already used !");
+            }else{
+              if(document.getElementById("student").checked == true) {
+                    $(".wrapper").css("display", "none");
+                    $(".wrapperS").css("visibility", "visible");
+              }
+              else if(document.getElementById("profesor").checked == true) {
+                    $(".wrapper").css("display", "none");
+                    $(".wrapperP").css("visibility", "visible");
+              }
+              else if(document.getElementById("corporation").checked == true){
+                    $(".wrapper").css("display", "none");
+                    $(".wrapperC").css("visibility", "visible");
+              }
+            }
           }
       });
-    if(document.getElementById("student").checked == true) {
-          $(".wrapper").css("display", "none");
-          $(".wrapperS").css("visibility", "visible");
-    }
-    else if(document.getElementById("profesor").checked == true) {
-          $(".wrapper").css("display", "none");
-          $(".wrapperP").css("visibility", "visible");
-    }
-    else if(document.getElementById("corporation").checked == true){
-          $(".wrapper").css("display", "none");
-          $(".wrapperC").css("visibility", "visible");
-    }
+
 }
 
 function submitStudent(){
