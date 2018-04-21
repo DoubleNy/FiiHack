@@ -34,3 +34,9 @@ function showProjectForm() {
     }
 }
 
+
+
+function searchElements() {
+    var numeCautat = document.getElementById("cuvantInserat").value;
+    alert(numeCautat);
+}
