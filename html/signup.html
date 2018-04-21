@@ -68,6 +68,8 @@
                   <h1>Welcome, student.</h1>
               		<form class="form" action="javascript:submitStudent()">
                       <div class ="inputForm">
+                        <input id="nume" type="text" placeholder="First Name">
+                        <input id="prenume" type="text" placeholder="Last Name">
                         <input id="faculty" type="text" placeholder="Faculty">
                         <select id="year" name="Year" >
                             <option value="0">Year</option>
@@ -105,14 +107,14 @@
               </div>
 
 
-              <!--- profesor -->
+              <!--- corporatie -->
               <div class="wrapperC">
                             	<div class="containerC">
-                                <h1>>Welcome, talent seeker.</h1>
+                                <h1>Welcome, talent seeker.</h1>
                                 <form class="form" action="javascript:submitCorporation()">
                                     <div class ="inputForm">
                                       <input id="corpname" type="text" placeholder="Corporation name">
-                                      <input id="phone" type="text" placeholder="PhoneNumber">
+                                      <input id="phonec" type="text" placeholder="PhoneNumber">
                                       <input id="adress" type="text" placeholder="Adress">
                                     </div>
                                     <button type="submit" id="login-button"><b>Register</b></button>
@@ -136,12 +138,24 @@
                             	</ul>
               </div>
 
-              <!--- corporation -->
+              <!--- profesori -->
               <div class="wrapperP">
               <div class="containerP">
                 <h1>Welcome, teacher.</h1>
+
                 <form class="form" action="javascript:submitProfessor()">
-                    <button type="submit" id="login-button"><b>Register</b></button>
+                  <div class ="inputForm">
+                    <input id="numep" type="text" placeholder="First Name">
+                    <input id="prenumep" type="text" placeholder="Last Name">
+                    <input type="text" id="phonep" placeholder="PhoneNumber">
+                    <select name="Gender" id="genderp">
+                        <option value="0">Gender</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                  </div>
+                  <button type="submit" id="login-button"><b>Register</b></button>
+
                 </form>
               </div>
               <div class = "other">

@@ -10,7 +10,9 @@
         die("Eroare la conectare");
       }
 
-      $username = $_POST["name"];
+      $fname = $_POST["fname"];
+      $lname = $_POST["lname"];
+      $username = $_POST["username"];
       $email = $_POST["email"];
       $password = $_POST["password"];
       $repassword = $_POST["repassword"];
@@ -18,9 +20,19 @@
       $year = $_POST["year"];
       $phone = $_POST["phone"];
       $gender = $_POST["gender"];
-      echo $username . " " . $email . " " . $password . " " . $repassword . " " . $faculty . " " . $year . " " . $phone . " " .$gender;
-      $qry = "insert into students values ('$username', '$email', '$password', '$faculty', '$year', '$phone', '$gender')";
+      $id=rand(100,10000);
+      $qry = "insert into studenti values ('$id' , '$username', '$email', '$password', '$fname', '$lname', '$faculty', '$year', '$phone', '$gender')";
       mysqli_query($mysql, $qry);
+      echo "Fname: " . $fname;
+      echo "Lname: " . $lname;
+      echo "Username: " . $username;
+      echo "Email: " . $email;
+      echo "Password: " . $password;
+      echo "Repassword: " . $repassword;
+      echo "Facultate: " . $faculty;
+      echo "Year: " . $year;
+      echo "Phone: " . $phone;
+      echo "Gender: " . $gender;
 
       //
 ?>
