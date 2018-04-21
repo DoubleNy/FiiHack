@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/student.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="../javascript/student.js"></script>
 </head>
 <body>
 
@@ -41,8 +41,14 @@
 <div class="container2">
 
     <h1 id="sectionName">Skills</h1>
-    <h1 id="addSkill">+</h1>
+    <h1 id="addSkill" onclick="showSkillForm()">+</h1>
 
+    <div id="formSkill">
+      <form action="" id="usrform" >
+        <input type="text" name="skillName" required>
+        <input type="submit">
+      </form>
+    </div>
 
   <div class="skill">
     <h1 id="skill1">Php</h1>
@@ -54,10 +60,10 @@
 <div class="container2">
 
     <h1 id="sectionName">Experience</h1>
-    <h1 id="addExperience">+</h1>
+    <h1 id="addExperience" onclick="showExperienceForm()">+</h1>
 
-    <div id="formularExperienta">
-      <form action="/action_page.php" id="usrform" >
+    <div id="formExperience">
+      <form action="" id="usrform" >
         <textarea rows="4" cols="50" name="comment" ></textarea>
         <input type="submit">
       </form>
@@ -73,7 +79,14 @@
 <div class="container2" style="margin: 2px auto 50px;">
 
     <h1 id="sectionName">Projects</h1>
-    <h1 id="addProject">+</h1>
+    <h1 id="addProject" onclick="showProjectForm()">+</h1>
+
+    <div id="formProject">
+      <form action="" id="usrform" >
+        <textarea rows="4" cols="50" name="comment" ></textarea>
+        <input type="submit">
+      </form>
+    </div>
 
   <div class="project">
     <h1 id="project1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>

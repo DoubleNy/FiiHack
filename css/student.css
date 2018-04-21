@@ -150,12 +150,42 @@ html {
 
 textarea{
   width:100%;
+  resize:none;
 }
 
-input {
+#formExperience input[type=submit],
+#formProject input[type=submit] {
   border: none;
-  margin: 0 auto;
+  display: block;
+  color: white;
+  background-color: #ff4800;
+  padding: 10px;
+  margin: 5px auto;
 }
+
+#formSkill input[type=submit] {
+  border: none;
+  color: white;
+  background-color: #ff4800;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+#formSkill input[type=text] {
+  border: none;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+#formSkill {
+  margin: 10px 0px;
+  display: none;
+}
+#formProject,
+#formExperience {
+    display: none;
+}
+
 
 
 @media screen and (max-height: 450px) {
