@@ -45,3 +45,53 @@ function showReviewsForm() {
         y.style.transform = "rotate(45deg)";
     }
 }
+
+var userId1 = 1, skillName1, experienta1, studiu1, review1;
+
+function adaugaSkill(){
+  skillName1 = document.getElementById("skillName").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/profAddSkill.php",
+        data: ({userId:userId1, skillName: skillName1}),
+        success: function(rs){
+          alert(rs);
+        }
+    });
+}
+
+function adaugaExperienta(){
+  experienta1 = document.getElementById("experienta").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/profAddExperienta.php",
+        data: ({userId:userId1, experienta: experienta1}),
+        success: function(rs){
+          alert(rs);
+        }
+    });
+}
+
+function adaugaStudii(){
+  studiu1 = document.getElementById("studiu").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/profAddStudiu.php",
+        data: ({userId:userId1, studiu: studiu1}),
+        success: function(rs){
+          alert(rs);
+        }
+    });
+}
+
+function adaugaReview(){
+  review1 = document.getElementById("review").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/profAddReview.php",
+        data: ({userId:userId1, review: review1}),
+        success: function(rs){
+          alert(rs);
+        }
+    });
+}
