@@ -8,6 +8,10 @@ html {
   background: url(../images/wallpaper.jpg) no-repeat center center fixed;
 }
 
+h1 {
+  transition: transform 0.5s;
+}
+
 .sidenav {
     height: 100%;
     width: 0;

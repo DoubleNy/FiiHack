@@ -3,10 +3,10 @@ function showSkillForm() {
     var y = document.getElementById("addSkill");
     if (x.style.display === "block") {
         x.style.display = "none";
-        y.innerHTML = "+";
+        y.style.transform = "rotate(0deg)";
     } else {
         x.style.display = "block";
-        y.innerHTML = "-";
+        y.style.transform = "rotate(45deg)";
     }
 }
 
@@ -15,10 +15,10 @@ function showExperienceForm() {
     var y = document.getElementById("addExperience");
     if (x.style.display === "block") {
         x.style.display = "none";
-        y.innerHTML = "+";
+        y.style.transform = "rotate(0deg)";
     } else {
         x.style.display = "block";
-        y.innerHTML = "-";
+        y.style.transform = "rotate(45deg)";
     }
 }
 
@@ -27,10 +27,9 @@ function showProjectForm() {
     var y = document.getElementById("addProject");
     if (x.style.display === "block") {
         x.style.display = "none";
-        y.innerHTML = "+";
+        y.style.transform = "rotate(0deg)";
     } else {
         x.style.display = "block";
-        y.innerHTML = "-";
+        y.style.transform = "rotate(45deg)";
     }
 }
-
