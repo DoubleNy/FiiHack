@@ -33,3 +33,20 @@ function showProjectForm() {
         y.style.transform = "rotate(45deg)";
     }
 }
+
+function searchElements() {
+  var nume = document.getElementById("cuvantInserat").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/search.php",
+        data: ({nume: nume}),
+        success: function(jsData){
+            //alert("ok");
+            var p = JSON.parse(jsData);
+            //console.log(jsData);
+            alert(p[0]["name"]);
+            //JSON.parse(jsData);
+            //alert(jsData[nume]);
+        }
+    });
+}
