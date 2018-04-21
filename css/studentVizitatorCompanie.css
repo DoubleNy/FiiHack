@@ -59,7 +59,7 @@ html {
 .container{
     background-color: rgba(0,0,0,0.2);
     width: 80%;
-    height: 400px;
+    height: 410px;
     margin: 2px auto 0px;
 }
 
@@ -121,10 +121,9 @@ html {
     display: inline-block;
 }
 
-.container2 #addObject,
+.container2 #addSkill,
 .container2 #addExperience,
-.container2 #addStudy,
-.container2 #addReview{
+.container2 #addProject {
     font-size: 40px;
     display: inline-block;
 
@@ -132,15 +131,14 @@ html {
     color: #ff4800;
 }
 
-.container2 #addObject:hover,
+.container2 #addSkill:hover,
 .container2 #addExperience:hover,
-.container2 #addStudy:hover,
-.container2 #addReview:hover{
+.container2 #addProject:hover  {
     color: black;
     cursor: pointer;
 }
 
-.container2 .object h1{
+.container2 .skill h1{
     font-size: 20px;
     display: inline-block;
     padding: 5px 10px;
@@ -151,8 +149,7 @@ html {
 }
 
 .container2 .experience h1,
-.container2 .studies h1,
-.container2 .review h1{
+.container2 .project h1{
     font-size: 20px;
     display: block;
     padding: 15px 10px;
@@ -161,8 +158,7 @@ html {
 }
 
 .container2 .experience h1:last-child,
-.container2 .studies h1:last-child,
-.container2 .review h1:last-child{
+.container2 .project h1:last-child{
     border: none;
 }
 
@@ -172,8 +168,7 @@ textarea{
 }
 
 #formExperience input[type=submit],
-#formStudy input[type=submit],
-#formReview input[type=submit]{
+#formProject input[type=submit] {
     border: none;
     display: block;
     color: white;
@@ -182,7 +177,7 @@ textarea{
     margin: 5px auto;
 }
 
-#formObject input[type=submit] {
+#formSkill input[type=submit] {
     border: none;
     color: white;
     background-color: #ff4800;
@@ -190,22 +185,34 @@ textarea{
     margin: 5px auto;
 }
 
-#formObject input[type=text] {
+#formSkill input[type=text] {
     border: none;
     padding: 10px;
     margin: 5px auto;
 }
 
-#formObject {
+#formSkill {
     margin: 10px 0px;
     display: none;
 }
-#formStudy,
-#formExperience,
-#formReview{
+#formProject,
+#formExperience {
     display: none;
 }
 
+button {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    margin-right: 100px;
+    margin-left: 100px;
+    padding: 2px 2px 2px 2px;
+}
+
+ul li
+{
+    color: #f1f1f1;
+    margin-top: 10px;
+}
 
 
 @media screen and (max-height: 450px) {

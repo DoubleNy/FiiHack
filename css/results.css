@@ -49,6 +49,10 @@ html {
   margin: 2px auto 0px;
 }
 
+.container:last-of-type {
+  margin: 2px auto 50px;
+}
+
 .containerLeft {
   display: inline-block;
   width: 30%;
