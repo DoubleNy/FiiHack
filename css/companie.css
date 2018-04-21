@@ -77,20 +77,18 @@ html {
   margin: 20px auto;
 }
 
-.containerRight h2{
-  font-size: 20px;
-  color:white;
-  background-color: #ff4800;
-  display: inline-block;
-  padding: 3px;
-  border-radius: 10%;
+.containerRight i {
+  font-size: 30px;
+  color: #ff4800;
+  margin: 10px;
 }
 
-.containerRight h3{
-  font-size: 20px;
-  margin: 10px auto;
-  padding-left: 20px;
+.containerRight p {
+  font-size: 30px;
+  display: inline-block;
+margin: 10px;
 }
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .container2{
@@ -101,15 +99,13 @@ html {
   box-sizing: border-box;
 }
 
-.container2 #sectionName {
+.container2 #jobName {
   font-size: 40px;
   color: #ff4800;
   display: inline-block;
 }
 
-.container2 #addSkill,
-.container2 #addExperience,
-.container2 #addProject {
+.container2 #addJob {
   font-size: 40px;
   display: inline-block;
 
@@ -117,34 +113,27 @@ html {
   color: #ff4800;
 }
 
-.container2 #addSkill:hover,
-.container2 #addExperience:hover,
-.container2 #addProject:hover  {
+.container2 #addJob:hover {
   color: black;
   cursor: pointer;
 }
 
-.container2 .skill h1{
+.container2 .job h1 {
   font-size: 20px;
-  display: inline-block;
-  padding: 5px 10px;
-  margin: 0 5px;
-  border-radius: 20%;
-  background-color: #ff4800;
-  color: white;
+  display: block;
+  padding: 15px 10px;
+  color: black;
 }
 
-.container2 .experience h1,
-.container2 .project h1{
-  font-size: 20px;
+.container2 .job h2 {
+  font-size: 15px;
   display: block;
   padding: 15px 10px;
   color: black;
   border-bottom: 1px solid white;
 }
 
-.container2 .experience h1:last-child,
-.container2 .project h1:last-child{
+.container2 .job h2:last-child {
   border: none;
 }
 
@@ -153,8 +142,7 @@ textarea{
   resize:none;
 }
 
-#formExperience input[type=submit],
-#formProject input[type=submit] {
+#formJob input[type=submit] {
   border: none;
   display: block;
   color: white;
@@ -163,31 +151,17 @@ textarea{
   margin: 5px auto;
 }
 
-#formSkill input[type=submit] {
+#formJob input[type=text] {
   border: none;
-  color: white;
-  background-color: #ff4800;
+  display: block;
   padding: 10px;
   margin: 5px auto;
 }
 
-#formSkill input[type=text] {
-  border: none;
-  padding: 10px;
-  margin: 5px auto;
-}
-
-#formSkill {
+#formJob {
   margin: 10px 0px;
   display: none;
 }
-#formProject,
-#formExperience {
-    display: none;
-}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}

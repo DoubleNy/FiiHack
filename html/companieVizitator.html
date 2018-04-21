@@ -1,0 +1,77 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/companieVizitator.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Side bar -->
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+<span style="font-size:30px;cursor:pointer;color:black;position:fixed;top:30px;left:30px;" onclick="openNav()">&#9776;</span>
+
+<!-- Informatiile de baza -->
+
+<div class="container" style="margin: 50px auto 0px;">
+
+  <div class="containerLeft">
+    <img src="../images/amazon.jpg" alt="Logo" style="width:200px">
+  </div>
+
+  <div class="containerRight">
+      <h1 id="name">Amazon</h1>
+      <i class="material-icons">&#xe0c8;</i>
+      <p id="location">Iasi</p>
+      <br>
+      <i style="font-size:24px" class="fa">&#xf095;</i>
+      <p id="phoneNo">+40770345876</p>
+      <br>
+      <i class="material-icons">&#xe0be;</i>
+      <p id="email">amazon@yahoo.com</p>
+  </div>
+
+</div>
+
+<!-- Adaugare de joburi -->
+
+<div class="container2" style="margin: 2px auto 50px;">
+
+    <h1 id="jobName">Jobs</h1>
+
+    <div class="job">
+      <h1 class="jobTitle">Lorem int laborum.</h1>
+      <h2 class="jobInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+      <p class="apply">Apply</p>
+    </div>
+
+    <div class="job">
+      <h1 class="jobTitle">Lorem int laborum.</h1>
+      <h2 class="jobInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+      <p class="apply">Apply</p>
+    </div>
+
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>
