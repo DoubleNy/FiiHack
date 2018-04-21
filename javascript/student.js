@@ -33,13 +33,3 @@ function showProjectForm() {
         y.style.transform = "rotate(45deg)";
     }
 }
-<<<<<<< HEAD
-=======
-
-
-
-function searchElements() {
-    var numeCautat = document.getElementById("cuvantInserat").value;
-    alert(numeCautat);
-}
->>>>>>> ccbfe6c2b09de9b25ddcbc163a79ede51ccce8ae
