@@ -17,8 +17,6 @@
       mysqli_query($mysql, $qry);
       echo $id . $skill;
 
-
-      //
 ?>
 
 

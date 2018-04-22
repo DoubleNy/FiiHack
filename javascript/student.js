@@ -1,3 +1,4 @@
+var id1 = 1;
 function showSkillForm() {
     var x = document.getElementById("formSkill");
     var y = document.getElementById("addSkill");
@@ -34,6 +35,37 @@ function showProjectForm() {
     }
 }
 
+function addSkill() {
+    var skill1 = document.getElementById("addSkillText").value;
+    alert(id1 + " " + skill1);
+    $.ajax({
+        type: "POST",
+        URL: "../Code/addStudentSkill.php",
+        data: ({id:id1, skill:skill1}),
+        success : function (rs) {
+            alert(rs)
+        }
+    })
+}
+
+function addExperience() {
+    var experience1 = document.getElementById("addExperienceText").value;
+    $.ajax({
+        type: "POST",
+        URL: "../Code/addStudentExperience.php",
+        data: ({id:id1, experience:experience1})
+    })
+}
+
+function addProject() {
+    var project1 = document.getElementById("addProjectText").value;
+    $.ajax({
+        type: "POST",
+        URL: "../Code/addStudentProject.php",
+        data: ({id:id1, proiect:project1})
+    })
+}
+
 function searchElements() {
   var nume = document.getElementById("cuvantInserat").value;
   $.ajax({
@@ -50,3 +82,4 @@ function searchElements() {
         }
     });
 }
+
