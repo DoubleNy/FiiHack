@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/searchBar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../javascript/student.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -39,6 +40,7 @@
   </div>
 
   <div class="containerRight">
+      <h2 id="id" style="visibility: hidden"></h2>
       <h1 id="name">Marcu David</h1>
       <h2>Faculty :</h2>
       <h3 id="faculty">Alexandru Ioan Cuza, Computer Science, Iasi</h3>
@@ -58,15 +60,15 @@
     <h1 id="addSkill" onclick="showSkillForm()">+</h1>
 
     <div id="formSkill">
-      <form action="">
-        <input type="text" name="skillName" required>
-        <input type="submit">
+      <form action="javascript:addSkill()">
+        <input type="text" id="addSkillText" name="skillName" required>
+          <button type="submit" id="login-button"><b>Submit</b></button>
       </form>
     </div>
 
   <div class="skill">
     <h1 id="skill1">Php</h1>
-    <h1 id="skill1">Java</h1>
+    <h1 id="skill2">Java</h1>
   </div>
 
 </div>
@@ -77,9 +79,9 @@
     <h1 id="addExperience" onclick="showExperienceForm()">+</h1>
 
     <div id="formExperience">
-      <form action="">
-        <textarea rows="4" cols="50" name="comment" ></textarea>
-        <input type="submit">
+      <form action="javascript:addExperience()">
+        <textarea rows="4" cols="50" id = "addExperienceText" name="comment" ></textarea>
+          <button type="submit" id="login-button"><b>Submit</b></button>
       </form>
     </div>
 
@@ -96,9 +98,9 @@
     <h1 id="addProject" onclick="showProjectForm()">+</h1>
 
     <div id="formProject">
-      <form action="">
-        <textarea rows="4" cols="50" name="comment" ></textarea>
-        <input type="submit">
+      <form action="javascript:addProject()">
+        <textarea rows="4" cols="50" id = "addProjectText" name="comment" ></textarea>
+          <button type="submit" id="login-button"><b>Submit</b></button>
       </form>
     </div>
 

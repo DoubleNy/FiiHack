@@ -1,5 +1,26 @@
 var username, email1, password1, password2, faculty1, year1, phone1, gender1, corpname1, adress1;
 
+function loginv(){
+  username = document.getElementById("usernamel").value;
+  password = document.getElementById("passwordl").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/loginver.php",
+        data: ({username: username, password: password}),
+        success: function(rs){
+          if(rs == "0"){
+            alert("Wrong username or password !");
+          }else{
+            var href = "http://127.0.0.1/FiiHack/html/student.php";
+            window.location=href;
+
+            //alert(rs);
+          }
+        }
+    });
+}
+
+
 function redirect(){
     username = document.getElementById("username").value;
     email1 = document.getElementById("email").value;
@@ -7,7 +28,7 @@ function redirect(){
     password2 = document.getElementById("password2").value;
     $.ajax({
           type: "POST",
-          url: "../signupBD.php",
+          url: "../Code/signupBD.php",
           data: ({username: username, email: email1}),
           success: function(rs){
             if(rs == "0"){
@@ -42,7 +63,7 @@ function submitStudent(){
   gender1 = document.getElementById("gender").value;
   $.ajax({
         type: "POST",
-        url: "../connect.php",
+        url: "../Code/connect.php",
         data: ({fname:fname1, lname: lname1, username: username, email: email1, password: password1, repassword : password2, faculty : faculty1, year : year1, phone : phone1, gender : gender1}),
         success: function(rs){
           alert(rs);
@@ -59,7 +80,7 @@ function submitProfessor(){
   gender1 = document.getElementById("genderp").value;
   $.ajax({
         type: "POST",
-        url: "../connectProf.php",
+        url: "../Code/connectProf.php",
         data: ({fname:fname1, lname: lname1, username: username, email: email1, password: password1, repassword : password2, phone : phone1, gender : gender1}),
         success: function(rs){
           alert("Raspuns : " + rs);
@@ -76,7 +97,7 @@ function submitCorporation(){
   alert(corpname1 + phone1 + " " +adress1);
   $.ajax({
         type: "POST",
-        url: "../connectCorp.php",
+        url: "../Code/connectCorp.php",
         data: ({username: username, email: email1, password: password1, repassword : password2, corpname : corpname1, adress : adress1, phone:phone1}),
         success: function(rs){
           alert(rs);

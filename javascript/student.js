@@ -1,3 +1,40 @@
+var userId1 = 2044, skillName1, experienta1;
+function adaugaSkills(){
+  skillName1 = document.getElementById("skillNames").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/studAddSkill.php",
+        data: ({userId:userId1, skillName: skillName1}),
+        success: function(rs){
+          var href = window.location;
+          window.location=href;
+        }
+    });
+}
+function adaugaExps(){
+  experienta1 = document.getElementById("experientas").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/studAddExperienta.php",
+        data: ({userId:userId1, experienta: experienta1}),
+        success: function(rs){
+          var href = window.location;
+          window.location=href;
+        }
+    });
+}
+function adaugaProjs(){
+  proiect1 = document.getElementById("proiect").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/studAddProjs.php",
+        data: ({userId:userId1, proiect: proiect1}),
+        success: function(rs){
+          var href = window.location;
+          window.location=href;
+        }
+    });
+}
 function showSkillForm() {
     var x = document.getElementById("formSkill");
     var y = document.getElementById("addSkill");
@@ -32,4 +69,52 @@ function showProjectForm() {
         x.style.display = "block";
         y.style.transform = "rotate(45deg)";
     }
+}
+
+function addSkill() {
+    var skill1 = document.getElementById("addSkillText").value;
+    alert(id1 + " " + skill1);
+    $.ajax({
+        type: "POST",
+        URL: "../Code/addStudentSkill.php",
+        data: ({id:id1, skill:skill1}),
+        success : function (rs) {
+            alert(rs)
+        }
+    })
+}
+
+function addExperience() {
+    var experience1 = document.getElementById("addExperienceText").value;
+    $.ajax({
+        type: "POST",
+        URL: "../Code/addStudentExperience.php",
+        data: ({id:id1, experience:experience1})
+    })
+}
+
+function addProject() {
+    var project1 = document.getElementById("addProjectText").value;
+    $.ajax({
+        type: "POST",
+        URL: "../Code/addStudentProject.php",
+        data: ({id:id1, proiect:project1})
+    })
+}
+
+function searchElements() {
+  var nume = document.getElementById("cuvantInserat").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/search.php",
+        data: ({nume: nume}),
+        success: function(jsData){
+            //alert("ok");
+            var p = JSON.parse(jsData);
+            //console.log(jsData);
+            alert(p[0]["name"]);
+            //JSON.parse(jsData);
+            //alert(jsData[nume]);
+        }
+    });
 }
