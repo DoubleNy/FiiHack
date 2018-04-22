@@ -1,3 +1,40 @@
+var userId1 = 2044, skillName1, experienta1;
+function adaugaSkills(){
+  skillName1 = document.getElementById("skillNames").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/studAddSkill.php",
+        data: ({userId:userId1, skillName: skillName1}),
+        success: function(rs){
+          var href = window.location;
+          window.location=href;
+        }
+    });
+}
+function adaugaExps(){
+  experienta1 = document.getElementById("experientas").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/studAddExperienta.php",
+        data: ({userId:userId1, experienta: experienta1}),
+        success: function(rs){
+          var href = window.location;
+          window.location=href;
+        }
+    });
+}
+function adaugaProjs(){
+  proiect1 = document.getElementById("proiect").value;
+  $.ajax({
+        type: "POST",
+        url: "../Code/studAddProjs.php",
+        data: ({userId:userId1, proiect: proiect1}),
+        success: function(rs){
+          var href = window.location;
+          window.location=href;
+        }
+    });
+}
 function showSkillForm() {
     var x = document.getElementById("formSkill");
     var y = document.getElementById("addSkill");

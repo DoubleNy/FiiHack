@@ -11,7 +11,10 @@ function loginv(){
           if(rs == "0"){
             alert("Wrong username or password !");
           }else{
-            alert(rs);
+            var href = "http://127.0.0.1/FiiHack/html/student.php";
+            window.location=href;
+
+            //alert(rs);
           }
         }
     });
