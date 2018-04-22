@@ -5,14 +5,6 @@
     <link rel="stylesheet" href="../css/results.css">
     <link rel="stylesheet" href="../css/searchBar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-    window.onload = function() {
-          var myurl = window.location.href;
-          var arr = myurl.split("=");
-          alert(arr[1]);
-
-    };
-    </script>
 </head>
 <body>
 
