@@ -8,23 +8,46 @@ function loginv(){
         url: "../Code/loginver.php",
         data: ({username: username, password: password}),
         success: function(rs){
+          alert(rs);
           if(rs == "0"){
             alert("Wrong username or password !");
           }else{
-            $.ajax({
-                  type: "POST",
-                  url: "",
-                  data: ({username: username}),
-                  success: function(data){
-                    var res = data.split(" ");
-                    location.href = "../html/student.php?nume=" + username;
-                    //document.getElementById("toAdd").innerHTML = "Paragraph changed!";
+            if(rs == "1"){
+                $.ajax({
+                      type: "POST",
+                      url: "",
+                      data: ({username: username}),
+                      success: function(data){
+                        var res = data.split(" ");
+                        location.href = "../html/student.php?nume=" + username;
+                      }
+                  });
+            }
+            if(rs == "2"){
+                alert("E prof");
+                $.ajax({
+                      type: "POST",
+                      url: "",
+                      data: ({username: username}),
+                      success: function(data){
+                        location.href = "../html/professor.php?nume=" + username;
+                        var res = data.split(" ");
+                      }
+                  });
+            }
+            if(rs == "3"){
+              alert("E corp");
+                $.ajax({
+                      type: "POST",
+                      url: "",
+                      data: ({username: username}),
+                      success: function(data){
+                        var res = data.split(" ");
+                        location.href = "../html/companie.php?nume=" + username;
+                      }
+                  });
+            }
 
-                    //alert(res[0] + " " + res[1] + " " + res[2] + " " + res[3])
-                  }
-              });
-
-            //alert(rs);
           }
         }
     });
