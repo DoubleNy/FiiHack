@@ -39,18 +39,33 @@
     <img src="../images/eagle.jpg" alt="Avatar" style="width:200px">
   </div>
   <?php
-        $mysql = new mysqli (
-                      'localhost',
-                      'root',
-                      '',
-                      'FiiDB'
-        );
-                //
-        if($mysql->connect_error){
-          die("Eroare la conectare");
-        }
+      $uri = $_SERVER['REQUEST_URI'];
+      //echo $uri; // Outputs: URI
 
-        $id = 2044;
+      $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+      $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+      //echo $url; // Outputs: Full URL
+      $arr = explode("=",$url);
+      $nume = $arr[1];
+      //echo $nume;
+
+            $mysql = new mysqli (
+                          'localhost',
+                          'root',
+                          '',
+                          'FiiDB'
+            );
+                    //
+            if($mysql->connect_error){
+              die("Eroare la conectare");
+            }
+            $qry = "select id from studenti where username='$nume'";
+            $rez = mysqli_query($mysql, $qry);
+            $row = mysqli_fetch_row($rez);
+
+
+        $id = $row[0];
         $qry = "select * from studenti where id='$id'";
         //echo $qry;
         $rez = mysqli_query($mysql, $qry);

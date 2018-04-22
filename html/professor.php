@@ -1,18 +1,36 @@
 <?php
-$userId = 1;
+    $uri = $_SERVER['REQUEST_URI'];
+    //echo $uri; // Outputs: URI
+
+    $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+    $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    //echo $url; // Outputs: Full URL
+    $arr = explode("=",$url);
+    $nume = $arr[1];
+    //echo $nume;
+
+          $mysql = new mysqli (
+                        'localhost',
+                        'root',
+                        '',
+                        'FiiDB'
+          );
+                  //
+          if($mysql->connect_error){
+            die("Eroare la conectare");
+          }
+          $qry = "select id from profesori where username='$nume'";
+          $rez = mysqli_query($mysql, $qry);
+          $row = mysqli_fetch_row($rez);
+
+
+      $userId = $row[0];
 $nume = "necunoscut";
 $email = "necunoscut";
 $telefon = "necunoscut";
 
-$mysql = new mysqli (
-              'localhost',
-              'root',
-              '',
-              'FiiDB'
-);
-if($mysql->connect_error){
-  die("Eroare la conectare");
-}
+
 
 $sql = "SELECT nume, prenume, email, telefon FROM profesori WHERE id = $userId";
 $result = mysqli_query($mysql, $sql);

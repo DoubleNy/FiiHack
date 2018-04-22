@@ -34,7 +34,7 @@
     //echo $url; // Outputs: Full URL
     $arr = explode("=",$url);
     $nume = $arr[1];
-    echo $nume;
+    //echo $nume;
 
           $mysql = new mysqli (
                         'localhost',

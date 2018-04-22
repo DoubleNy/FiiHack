@@ -99,7 +99,15 @@ function submitStudent(){
         url: "../Code/connect.php",
         data: ({fname:fname1, lname: lname1, username: username, email: email1, password: password1, repassword : password2, faculty : faculty1, year : year1, phone : phone1, gender : gender1}),
         success: function(rs){
-          alert(rs);
+          $.ajax({
+                type: "POST",
+                url: "",
+                data: ({username: username}),
+                success: function(data){
+                  var res = data.split(" ");
+                  location.href = "../html/student.php?nume=" + username;
+                }
+            });
         }
     });
 }
@@ -116,7 +124,15 @@ function submitProfessor(){
         url: "../Code/connectProf.php",
         data: ({fname:fname1, lname: lname1, username: username, email: email1, password: password1, repassword : password2, phone : phone1, gender : gender1}),
         success: function(rs){
-          alert("Raspuns : " + rs);
+          $.ajax({
+                type: "POST",
+                url: "",
+                data: ({username: username}),
+                success: function(data){
+                  location.href = "../html/professor.php?nume=" + username;
+                  var res = data.split(" ");
+                }
+            });
         }
     });
 }
@@ -133,7 +149,15 @@ function submitCorporation(){
         url: "../Code/connectCorp.php",
         data: ({username: username, email: email1, password: password1, repassword : password2, corpname : corpname1, adress : adress1, phone:phone1}),
         success: function(rs){
-          alert(rs);
+          $.ajax({
+                type: "POST",
+                url: "",
+                data: ({username: username}),
+                success: function(data){
+                  var res = data.split(" ");
+                  location.href = "../html/companie.php?nume=" + username;
+                }
+            });
         }
     });
 }
