@@ -1,3 +1,47 @@
+<?php
+$userId = 1;
+$nume = "necunoscut";
+$locatie = "necunoscuta";
+$email = "necunoscut";
+$telefon = "necunoscut";
+
+$mysql = new mysqli (
+              'localhost',
+              'root',
+              '',
+              'FiiDB'
+);
+if($mysql->connect_error){
+  die("Eroare la conectare");
+}
+
+$sql = "SELECT nume, adresa, email, telefon FROM corporatii WHERE id = $userId";
+$result = mysqli_query($mysql, $sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $nume = $row["nume"];
+    $locatie = $row["adresa"];
+    $email = $row["email"];
+    $telefon = $row["telefon"];
+}
+
+$sql2 = "SELECT titlu, descriere FROM companiejobs WHERE id = $userId";
+$result2 = mysqli_query($mysql, $sql2);
+
+$titluJob = array();
+$descriereJob = array();
+$count = 0;
+if ($result2->num_rows > 0) {
+    while($row = $result2->fetch_assoc()) {
+      $titluJob[] = $row["titlu"];
+      $descriereJob[] = $row["descriere"];
+      $count++;
+    }
+}
+
+?>
+
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -47,15 +91,15 @@
   </div>
 
   <div class="containerRight">
-      <h1 id="name">Amazon</h1>
+      <h1 id="name"><?php echo $nume; ?></h1>
       <i class="material-icons">&#xe0c8;</i>
-      <p id="location">Iasi</p>
+      <p id="location"><?php echo $locatie; ?></p>
       <br>
       <i style="font-size:24px" class="fa">&#xf095;</i>
-      <p id="phoneNo">+40770345876</p>
+      <p id="phoneNo"><?php echo $telefon; ?></p>
       <br>
       <i class="material-icons">&#xe0be;</i>
-      <p id="email">amazon@yahoo.com</p>
+      <p id="email"><?php echo $email; ?></p>
   </div>
 
 </div>
@@ -75,15 +119,11 @@
       </form>
     </div>
 
-    <div class="job">
-      <h1 class="jobTitle">Lorem int laborum.</h1>
-      <h2 class="jobInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
-    </div>
-
-    <div class="job">
-      <h1 class="jobTitle">Lorem int laborum.</h1>
-      <h2 class="jobInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
-    </div>
+  <?php
+  for($i = 0; $i < $count; $i++) {
+    echo "<div class=\"job\"><h1 class=\"jobTitle\">$titluJob[$i]</h1><h2 class=\"jobInfo\">$descriereJob[$i]</h2>";
+  }
+  ?>
 
 </div>
 

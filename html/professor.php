@@ -1,3 +1,71 @@
+<?php
+$userId = 1;
+$nume = "necunoscut";
+$email = "necunoscut";
+$telefon = "necunoscut";
+
+$mysql = new mysqli (
+              'localhost',
+              'root',
+              '',
+              'FiiDB'
+);
+if($mysql->connect_error){
+  die("Eroare la conectare");
+}
+
+$sql = "SELECT nume, prenume, email, telefon FROM profesori WHERE id = $userId";
+$result = mysqli_query($mysql, $sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $nume = $row["nume"]. " " .$row["prenume"];
+    $email = $row["email"];
+    $telefon = $row["telefon"];
+}
+
+$sql2 = "SELECT experienta FROM profexp WHERE id = $userId";
+$result2 = mysqli_query($mysql, $sql2);
+
+$experiente = array();
+if ($result2->num_rows > 0) {
+    while($row = $result2->fetch_assoc()) {
+      $experiente[] = $row["experienta"];
+    }
+}
+
+$sql3 = "SELECT curs FROM profpreda WHERE id = $userId";
+$result3 = mysqli_query($mysql, $sql3);
+
+$cursuri = array();
+if ($result3->num_rows > 0) {
+    while($row = $result3->fetch_assoc()) {
+      $cursuri[] = $row["curs"];
+    }
+}
+
+$sql4 = "SELECT facultate FROM profstudii WHERE id = $userId";
+$result4 = mysqli_query($mysql, $sql4);
+
+$facultati = array();
+if ($result4->num_rows > 0) {
+    while($row = $result4->fetch_assoc()) {
+      $facultati[] = $row["facultate"];
+    }
+}
+
+$sql5 = "SELECT review FROM profreviews WHERE id = $userId";
+$result5 = mysqli_query($mysql, $sql5);
+
+$reviews = array();
+if ($result5->num_rows > 0) {
+    while($row = $result5->fetch_assoc()) {
+      $reviews[] = $row["review"];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,13 +110,13 @@
     </div>
 
     <div class="containerRight">
-        <h1 id="name">Marcu David</h1>
+        <h1 id="name"><?php echo $nume; ?></h1>
         <h2>University: </h2>
         <h3 id = "university"> Alexandru Ioan Cuza, Computer Science, Iasi</h3>
         <h2>Phone No :</h2>
-        <h3 id="phoneNo">+40770345876</h3>
+        <h3 id="phoneNo"><?php echo $telefon; ?></h3>
         <h2>Email :</h2>
-        <h3 id="email">marcu.david.boss@yahoo.com</h3>
+        <h3 id="email"><?php echo $email; ?></h3>
     </div>
 
 </div>
@@ -66,8 +134,11 @@
     </div>
 
     <div class="object">
-        <h1 id="object1">Databases</h1>
-        <h1 id="object2">Web Technologies</h1>
+      <?php
+      foreach ($cursuri as $value) {
+        echo "<h1>$value</h1>";
+      }
+      ?>
     </div>
 
 </div>
@@ -85,8 +156,11 @@
     </div>
 
     <div class="experience">
-        <h1 id="exp1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
-        <h1 id="exp2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+      <?php
+      foreach ($experiente as $value) {
+        echo "<h1>$value</h1>";
+      }
+      ?>
     </div>
 
 </div>
@@ -104,8 +178,11 @@
     </div>
 
     <div class="studies">
-        <h1 id="study1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
-        <h1 id="study2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+      <?php
+      foreach ($facultati as $value) {
+        echo "<h1>$value</h1>";
+      }
+      ?>
     </div>
 
 </div>
@@ -123,8 +200,11 @@
     </div>
 
     <div class="review">
-        <h1 id="project1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
-        <h1 id="project2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+      <?php
+      foreach ($reviews as $value) {
+        echo "<h1>$value</h1>";
+      }
+      ?>
     </div>
 
 </div>
