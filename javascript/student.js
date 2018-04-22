@@ -118,3 +118,18 @@ function searchElements() {
         }
     });
 }
+function searchElements() {
+  var nume = document.getElementById("cuvantInserat").value;
+  $.ajax({
+        type: "POST",
+        url: "",
+        data: ({nume: nume}),
+        success: function(data){
+          var res = data.split(" ");
+          location.href = "../html/results.php?nume=" + nume;
+          //document.getElementById("toAdd").innerHTML = "Paragraph changed!";
+
+          //alert(res[0] + " " + res[1] + " " + res[2] + " " + res[3])
+        }
+    });
+}

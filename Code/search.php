@@ -10,15 +10,13 @@
         die("Eroare la conectare");
       }
       $nume = $_POST["nume"];
-      echo "Cautam numele :  " . $nume . "\n";
-      $qry = "select nume, prenume, facultate from studenti where nume like '%$nume%'";
+      $qry = "select nume, prenume, facultate, telefon from studenti where nume like '%$nume%'";
       $ans= $mysql->query($qry);
       $arr = array();
       while ( $rows = $ans->fetch_assoc() ) {
-        //echo $rows['nume'] . "\n" . $rows['prenume']  . "\n" . $rows['facultate']  . "\n" . $rows['phone'] . "\n";
-        $arr[] = $rows;
+        echo $rows['nume'] . " " . $rows['prenume']  . " " . $rows['facultate']  . " " . $rows['telefon'] . " ";
+        //$arr[] = $rows;
         //  print_r($row1s);//echo "{$row['field']}";
       }
       //echo count($arr);
-      echo JSON.encode($arr);
 ?>
